@@ -1,0 +1,12 @@
+streamlit
+pandas
+folium
+streamlit-folium
+geopandas
+branca
+plotly
+joblib
+matplotlib
+wordcloud
+Pillow
+numpy
