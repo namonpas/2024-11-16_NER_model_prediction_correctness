@@ -10,3 +10,4 @@ matplotlib
 wordcloud
 Pillow
 numpy
+sklearn_crfsuite
