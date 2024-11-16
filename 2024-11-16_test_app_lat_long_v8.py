@@ -736,7 +736,7 @@ if __name__ == "__main__":
 # Load the pre-trained model
 @st.cache_data
 def load_model():
-    model = joblib.load(r"NER_model.joblib")
+    model = joblib.load("NER_model.joblib")
     return model
 
 model = load_model()
