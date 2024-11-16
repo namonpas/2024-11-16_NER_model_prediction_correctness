@@ -16,15 +16,31 @@ import matplotlib.font_manager as fm
 from PIL import ImageFont, ImageDraw, Image
 import numpy as np
 from wordcloud import WordCloud, get_single_color_func
+import os
 
 
 ## Model Part
 
 # Load the pre-trained model
 @st.cache_data
+# def load_model():
+#     model = joblib.load("NER_model.joblib")
+#     return model
+
+# model = load_model()
+
 def load_model():
-    model = joblib.load("NER_model.joblib")
-    return model
+    model_path = 'NER_model.joblib'
+    if os.path.exists(model_path):
+        try:
+            model = joblib.load(model_path)
+            return model
+        except Exception as e:
+            st.error(f"Error loading model: {str(e)}")
+            return None
+    else:
+        st.error(f"Model file {model_path} not found.")
+        return None
 
 model = load_model()
 
